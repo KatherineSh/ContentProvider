@@ -16,19 +16,20 @@
 	
 	<context:component-scan base-package="com.kateryna.restservice"></context:component-scan>
 
- 	<bean id="myDataSource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource">
+<!--  	<bean id="myDataSource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource">
 		<property name="driverClassName" value="${jdbc.driverClassName}"></property>
 		<property name="url" value="${jdbc.url}"></property>
 		<property name="username" value="${jdbc.username}"></property>
 		<property name="password" value="${jdbc.password}"></property>
 	
 		<property name="initialSize" value="5"></property>
-	</bean> 
+	</bean>  -->
 	
 	<bean id="myEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="myContentProviderJpaManager"></property>
+		<!-- <property name="persistenceUnitName" value="myContentProviderJpaManager"></property> -->
+		<property name="persistenceUnitName" value="myPersistenceUnit"></property>
 
-        <property name="dataSource" ref="myDataSource" />
+<!--         <property name="dataSource" ref="myDataSource" />
         <property name="packagesToScan" value="com.kateryna.restservice.*" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
@@ -42,7 +43,7 @@
 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
-		</property>
+		</property> -->
 	</bean> 
 	
 	<bean id="myTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
