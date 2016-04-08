@@ -6,6 +6,9 @@ import com.kateryna.restservice.model.Author;
 
 public interface AuthorsRepository {
 
+	public List<Author> get();
 	
-	public List<Author> getAuthors();
+	public boolean add(Author newAuthor);
+
+	//public boolean isExist(Author newAuthor);
 }

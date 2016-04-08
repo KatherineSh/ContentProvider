@@ -8,4 +8,8 @@ import com.kateryna.restservice.model.Author;
 public interface AuthorsProvider {
 	
 	public List<Author> getAuthors();
+
+	public boolean addAuthors(Author newAuthor);
+
+	//public boolean isExist(Author newAuthor);
 }

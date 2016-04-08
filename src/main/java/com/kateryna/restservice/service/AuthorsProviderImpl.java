@@ -15,7 +15,16 @@ public class AuthorsProviderImpl implements AuthorsProvider {
 	private AuthorsRepository authorsRepository;
 
 	public List<Author> getAuthors() {
-		return authorsRepository.getAuthors();
+		return authorsRepository.get();
 	}
+
+	public boolean addAuthors(Author newAuthor) {
+		return authorsRepository.add(newAuthor);
+	}
+
+/*	public boolean isExist(Author newAuthor) {
+		
+		return authorsRepository.isExist(newAuthor);
+	}*/
 
 }
